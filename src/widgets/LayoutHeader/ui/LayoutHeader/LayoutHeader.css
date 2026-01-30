@@ -1,0 +1,114 @@
+.cognisp-sidebar-menu.ant-menu,
+.cognisp-sidebar-menu .ant-menu,
+.cognisp-sidebar-menu .ant-menu-sub,
+.cognisp-sidebar-menu .ant-menu-inline,
+.cognisp-sidebar-menu .ant-menu-dark {
+  background-color: #2563eb !important; /* Tailwind blue-600 */
+  color: #ffffff !important;
+}
+
+.cognisp-sidebar-menu .ant-menu-item,
+.cognisp-sidebar-menu .ant-menu-submenu-title,
+.cognisp-sidebar-menu .ant-menu-item-group-title {
+  color: #ffffff !important;
+  background-color: transparent !important;
+}
+
+/* Keep submenu popup background blue */
+.cognisp-sidebar-menu .ant-menu-submenu-popup,
+.cognisp-sidebar-menu .ant-menu-submenu-popup .ant-menu,
+.cognisp-sidebar-menu .ant-menu-sub {
+  background-color: #2563eb !important;
+  color: #ffffff !important;
+}
+
+/* Hover / active states */
+.cognisp-sidebar-menu .ant-menu-item:hover,
+.cognisp-sidebar-menu .ant-menu-item-active,
+.cognisp-sidebar-menu .ant-menu-item-selected,
+.cognisp-sidebar-menu .ant-menu-submenu-open > .ant-menu-submenu-title {
+  background-color: rgba(255,255,255,0.08) !important;
+  color: #ffffff !important;
+}
+
+/* Submenu arrows and expand icons */
+.cognisp-sidebar-menu .ant-menu-submenu-arrow,
+.cognisp-sidebar-menu .ant-menu-submenu-title .ant-menu-submenu-arrow {
+  color: #ffffff !important;
+}
+
+/* Remove borders */
+.cognisp-sidebar-menu .ant-menu-item,
+.cognisp-sidebar-menu .ant-menu-submenu-title {
+  border: none !important;
+}
+
+/* Rounded corners for sidebar and mobile topbar */
+.cognisp-sidebar-container {
+  /* round outer right corners so sidebar still touches left edge */
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
+  overflow: hidden; /* ensure children don't overflow rounded corners */
+}
+
+.cognisp-mobile-topbar {
+  /* round bottom corners on mobile topbar so it looks like a compact nav */
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+/* Drawer content rounding - target ant drawer content inside our wrapper */
+.cognisp-drawer .ant-drawer-content {
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
+  overflow: hidden;
+}
+
+/* Also round the drawer body itself for small visual polish */
+.cognisp-drawer .ant-drawer-body {
+  padding: 0;
+}
+
+/* Collapsed sidebar: small 5px padding and center icons */
+.cognisp-sidebar-container.collapsed {
+  padding: 0 5px; /* 5px padding left and right when collapsed */
+}
+
+.cognisp-sidebar-container.collapsed .cognisp-sidebar-menu .ant-menu-item {
+  justify-content: center !important; /* center icon horizontally */
+  padding-left: 0 !important;
+  padding-right: 5px !important; /* 5px gap from right edge */
+}
+
+.cognisp-sidebar-container.collapsed .cognisp-sidebar-menu .ant-menu-item .ant-menu-title-content {
+  display: none; /* hide text labels when collapsed (icon-only) */
+}
+
+.cognisp-sidebar-container.collapsed .cognisp-sidebar-menu .ant-menu-item .anticon,
+.cognisp-sidebar-container.collapsed .cognisp-sidebar-menu .ant-menu-item-icon {
+  margin: 0 !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Make imported SVG logo visible on dark backgrounds by converting dark parts to light */
+.cognisp-sidebar-container img,
+.cognisp-mobile-topbar img,
+.cognisp-drawer img {
+  /* Convert dark/black parts of the SVG to bright so they show on blue background */
+  filter: invert(1) brightness(1.8) saturate(0.9);
+  /* Keep size behavior from JSX classes (h-10 w-10), but ensure it stays crisp */
+  image-rendering: -webkit-optimize-contrast;
+}
+
+/* If you prefer a white circular badge behind the logo instead, uncomment below.
+.cognisp-sidebar-container img,
+.cognisp-mobile-topbar img,
+.cognisp-drawer img {
+  background: #ffffff;
+  padding: 4px;
+  border-radius: 9999px;
+}
+*/
+
