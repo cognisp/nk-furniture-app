@@ -1,6 +1,5 @@
 // src/pages/Contact/Contact.tsx
 import React from "react";
-import { Button } from "antd";
 import LOGO_ICON from "@assets/nk_logo.png";
 
 const Contact: React.FC = () => {
